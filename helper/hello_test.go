@@ -5,8 +5,20 @@ import "testing"
 func TestHello(t *testing.T) {
 
 	result := Hello("nopal")
-	if result != "nopal" {
+	if result != "Hello nopal" {
 		//eror
-		panic("Hasil e salah cok")
+		t.Fail()
 	}
+	fmt.println("Berhasil")
+
+}
+
+func TestHelloNopal(t *testing.T) {
+
+	result := Hello("bukan nopal")
+	if result != "salah nopal" {
+		//eror
+		t.FailNow()
+	}
+	fmt.println("done")
 }
